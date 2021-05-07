@@ -7,4 +7,4 @@ app.get('/produtos', (req, res) =>
     knex('produtos').then((results) => res.json(results))
 )
 
-app.listen(process.env.PORT | 3000, () => console.log('Server is runing'));
+app.listen(process.env.PORT || 3000);
