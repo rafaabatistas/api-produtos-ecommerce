@@ -1,4 +1,10 @@
+const knex = require('./database');
 const express = require('express');
+
 const app = express();
 
-app.listen(3333, () => console.log('Serveris runing'));
+app.get('/produtos', (req, res) =>
+    knex('produtos').then((results) => res.json(results))
+)
+
+app.listen(process.env.PORT || 3000, () => console.log('Server is runing'));
